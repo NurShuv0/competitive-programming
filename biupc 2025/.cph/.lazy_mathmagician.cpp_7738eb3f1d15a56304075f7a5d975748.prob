@@ -1,0 +1,1 @@
+{"name":"Local: lazy_mathmagician","url":"d:\\MY_CODE\\C++\\biupc 2025\\lazy_mathmagician.cpp","tests":[{"id":1752367938367,"input":"3\n3 2\n4 5\n12 5\n","output":"6\n2\n6\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\biupc 2025\\lazy_mathmagician.cpp","group":"local","local":true}

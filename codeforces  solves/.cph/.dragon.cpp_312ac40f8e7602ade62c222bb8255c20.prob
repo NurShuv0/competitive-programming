@@ -1,0 +1,1 @@
+{"name":"Local: dragon","url":"d:\\MY_CODE\\C++\\codeforces  solves\\dragon.cpp","tests":[{"id":1749896898269,"input":"2 2\n1 99\n100 0\n","output":"YES\n"},{"id":1749897025187,"input":"10 1\n100 100\n","output":"NO\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\dragon.cpp","group":"local","local":true}

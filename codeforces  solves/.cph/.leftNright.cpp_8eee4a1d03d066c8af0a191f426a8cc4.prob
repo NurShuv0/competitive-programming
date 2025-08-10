@@ -1,0 +1,1 @@
+{"name":"Local: leftNright","url":"d:\\MY_CODE\\C++\\codeforces  solves\\leftNright.cpp","tests":[{"id":1754583624159,"input":"4\n3 1\n..#\n4 2\n....\n5 3\n##..#\n6 4\n#...#.\n","output":"1\n1\n3\n3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\leftNright.cpp","group":"local","local":true}

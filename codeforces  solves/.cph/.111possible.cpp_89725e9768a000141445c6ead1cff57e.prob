@@ -1,0 +1,1 @@
+{"name":"Local: 111possible","url":"d:\\MY_CODE\\C++\\codeforces  solves\\111possible.cpp","tests":[{"id":1749128448675,"input":"3\n33\n144\n69\n","output":"YES\nYES\nNO\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\111possible.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: sorting","url":"d:\\MY_CODE\\C++\\competative_programming\\code_chef\\sorting.cpp","tests":[{"id":1754228449311,"input":"3\n1 2 8\n4 100 1\n7 3 5","output":"ALICE\nCHARLIE\nBOB"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\competative_programming\\code_chef\\sorting.cpp","group":"local","local":true}

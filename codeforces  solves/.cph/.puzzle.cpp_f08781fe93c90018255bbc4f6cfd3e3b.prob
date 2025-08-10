@@ -1,0 +1,1 @@
+{"name":"Local: puzzle","url":"d:\\MY_CODE\\C++\\codeforces  solves\\puzzle.cpp","tests":[{"id":1749923276882,"input":"4 6\n10 12 10 7 5 22","output":"5\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\puzzle.cpp","group":"local","local":true}

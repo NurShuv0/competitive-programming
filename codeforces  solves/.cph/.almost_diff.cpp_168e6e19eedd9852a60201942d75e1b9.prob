@@ -1,0 +1,1 @@
+{"name":"Local: almost_diff","url":"d:\\MY_CODE\\C++\\codeforces  solves\\almost_diff.cpp","tests":[{"id":1753407806186,"input":"5\n1 2 3 1 3\n","output":"4\n"},{"id":1753407828518,"input":"4\n6 6 5 5\n","output":"0\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\almost_diff.cpp","group":"local","local":true}

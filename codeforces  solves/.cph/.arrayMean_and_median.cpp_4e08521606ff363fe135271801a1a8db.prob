@@ -1,0 +1,1 @@
+{"name":"Local: arrayMean_and_median","url":"d:\\MY_CODE\\C++\\codeforces  solves\\arrayMean_and_median.cpp","tests":[{"id":1749142302588,"input":"3 4\n","output":"4\n3 -1 5 5\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\arrayMean_and_median.cpp","group":"local","local":true}

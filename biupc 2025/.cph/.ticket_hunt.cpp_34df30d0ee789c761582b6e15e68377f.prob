@@ -1,0 +1,1 @@
+{"name":"Local: ticket_hunt","url":"d:\\MY_CODE\\C++\\biupc 2025\\ticket_hunt.cpp","tests":[{"id":1752394082840,"input":"5 4\n20 10 40 50 30\n35 15 50 10\n","output":"30\n10\n50\n-1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\biupc 2025\\ticket_hunt.cpp","group":"local","local":true}

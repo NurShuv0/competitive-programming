@@ -1,0 +1,1 @@
+{"name":"Local: BFS_ROOM","url":"d:\\MY_CODE\\cp topics\\BFS_ROOM.cpp","tests":[{"id":1753594556531,"input":"5 8\n########\n#..#...#\n####.#.#\n#..#...#\n########","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\cp topics\\BFS_ROOM.cpp","group":"local","local":true}

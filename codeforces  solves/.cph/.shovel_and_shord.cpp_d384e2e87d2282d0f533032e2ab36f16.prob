@@ -1,0 +1,1 @@
+{"name":"Local: shovel_and_shord","url":"d:\\MY_CODE\\C++\\codeforces  solves\\shovel_and_shord.cpp","tests":[{"id":1752210210094,"input":"4\n4 4\n1000000000 0\n7 15\n8 7\n","output":"2\n0\n7\n5\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\shovel_and_shord.cpp","group":"local","local":true}

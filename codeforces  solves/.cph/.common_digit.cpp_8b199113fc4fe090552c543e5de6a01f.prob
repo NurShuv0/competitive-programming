@@ -1,0 +1,1 @@
+{"name":"Local: common_digit","url":"d:\\MY_CODE\\C++\\codeforces  solves\\common_digit.cpp","tests":[{"id":1752765460986,"input":"5\n6\n96\n78\n122\n696\n","output":"6\n6\n7\n1\n6\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\common_digit.cpp","group":"local","local":true}
