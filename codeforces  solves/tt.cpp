@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #define ll long long
 #define sp " "
 #define nl "\n"
@@ -20,26 +21,20 @@ int main()
         {
             cin >> v[i];
         }
-        vector<ll> towers;
-
+        vector<ll> swt;
         for (ll i = 0; i < n; i++)
         {
-            bool flag = false;
-            for (ll j = 0; j < towers.size(); j++)
+            auto it = lower_bound(swt.begin(), swt.end(), v[i]);
+            if (it == swt.end())
             {
-                if (towers[j] >= v[i])
-                {
-                    towers[j] = v[i];
-                    flag = true;
-                    break;
-                }
+                swt.push_back(v[i]);
             }
-            if (!flag)
+            else
             {
-                towers.push_back(v[i]);
+                *it = v[i];
             }
         }
-        cout << towers.size() << nl;
+        cout << swt.size() << nl;
     }
     return 0;
 }

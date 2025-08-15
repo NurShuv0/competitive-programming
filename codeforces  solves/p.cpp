@@ -18,10 +18,7 @@
 #define mod 1000000007
 #define best INT_MAX
 #define wrst INT_MIN
-
-// int gcd(int a, int b) {return b == 0 ? a : gcd(b, a % b);}
-// int lcm (int a,int b ) {return a * (b/gcd(a,b));}
-
+#define matrix  vector<vector<int>> matrix(row, vector<int>(col, 0));
 using namespace std;
 signed main()
 {
@@ -30,25 +27,35 @@ signed main()
     cin >> t;
     while(t--)
     {
-        int n;
-        cin >> n;
-        vector<int>v(n),v2(n);
-        for(int i = 0; i < n; i++)
+        int n, m;
+        cin >> n >> m;
+        vector<int>pref(n+1,0),suffix(n+1,0);
+        string vv,v;
+        cin >> vv;
+        for(int i = 1; i <= m;i++)
         {
-            cin >> v[i];
+            v += vv;
         }
-        for(int i = 0; i < n; i++)
+        cout << v << nl;
+        pref[0] = v[0] - '0';
+        for(int i = 1; i < v.size(); i++)
         {
-            cin>> v2[i];
+            pref[i] = v[i] - '0' + pref[i-1];
         }
-        int ans = 0;
-        for(int i = 0; i < n; i++)
+        suffix[0] = v[n-1] - '0';
+        for(int i = 1; i < v.size(); i++)
         {
-            if(v[i] > v2[i])
+            suffix[i] = v[n-i] - '0'+ suffix[i - 1];
+        }
+        int cnt = 0;
+        for(int i = 0; i < v.size();i++)
+        {
+            if(pref[i] == suffix[i+1])
             {
-                ans += (v[i] - v2[i]);
+                //cout << pref[i] << sp << suffix[i] << nl;
+                cnt++;
             }
         }
-        cout << ans + 1 << nl;
+        cout << cnt << nl;
     }
 }

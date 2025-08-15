@@ -17,7 +17,7 @@ int main()
     {
         string cmd;
         cin >> cmd;
-
+        // cout << cmd;
         if (cmd == "CONNECT")
         {
             int u, s;
