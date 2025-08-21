@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #define let_strt ios_base::sync_with_stdio(false); cin.tie(nullptr);
+
 #define nl "\n"
 #define int long long
 #define sp ' '
@@ -17,24 +18,32 @@
 #define mod 1000000007
 #define best INT_MAX
 #define wrst INT_MIN
+// int gcd (int a,int b) {return __gcd(a,b);}
+// int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
 signed main()
 {
-    int n, m;
-    cin >> n >> m;
-    vector<pair<int, int>> adj[n + 1];
-    for (int i = 0; i < n; i++)
+    let_strt;
+    int t;
+    cin >> t;
+    while (t--)
     {
-        int u, v, w;
-        cin >> u >> v >> w;
-        adj[u].pb(make_pair(v, w));
-    }
-    for (int i = 1; i <= n; i++)
-    {
-        cout << "("<< i << " is connected to " ;
-        for (auto &v : adj[i])
+        int n;
+        cin >> n;
+        vector<long long> b(n);
+        for (int i = 0; i < n; i++)
+            cin >> b[i];
+
+        bool ok = true;
+        for (int i = 1; i < n; i++)
         {
-            cout << v.f << " and weight is "<< v.s << ")" << nl;
+            if (b[i] > b[i - 1] + 1)
+            {
+                ok = false;
+                break;
+            }
         }
+        cout << (ok ? "YES" : "NO") << nl;
     }
+    return 0;
 }
