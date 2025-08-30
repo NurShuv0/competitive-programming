@@ -22,46 +22,26 @@
 // int gcd(int a, int b) {return b == 0 ? a : gcd(b, a % b);}
 // int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-
 signed main()
 {
-    let_strt
+    let_strt;
     int t;
     cin >> t;
-    while(t--)
+    while (t--)
     {
-        string str;
-        cin >> str;
-        int cnt0 = 0, cnt1 = 0;
-        for(int i = 0; i < str.size(); i++)
+        int a, b, c, d;
+        cin >> a >> b >> c >> d;
+        int dif_a = c - a, dif_b = d - b;
+        int mx = max(a, b), mn = min(a, b);
+        int mxdif = max(dif_a, dif_b);
+        int mndif = min(dif_a, dif_b);
+        if ((mx <= mn * 2 + 2) && (mxdif <= mndif * 2 + 2))
         {
-            if(str[i] == '0')
-            {
-                cnt0++;
-            }
-            else {
-                cnt1++;
-            }
+            cout << "YES" << nl;
         }
-        int t = 0;
-        //cout << cnt1 << sp << cnt0 << nl;
-        for(int i = 0; i < str.size(); i++)
+        else
         {
-            if(str[i] == '0' && cnt1 > 0)
-            {
-                t++;
-                cnt1--;
-            }
-            else if(str[i] == '1' && cnt0 > 0)
-            {
-                t++;
-                cnt0--;
-            }
-            else{
-                break;
-            }
+            cout << "NO" << nl;
         }
-        //cout << cnt0 << sp << cnt1 << nl;
-        cout << str.size() - t << nl;
     }
 }

@@ -21,47 +21,32 @@
 
 // int gcd(int a, int b) {return b == 0 ? a : gcd(b, a % b);}
 // int lcm (int a,int b ) {return a * (b/gcd(a,b));}
-using namespace std;
 
+using namespace std;
 signed main()
 {
-    let_strt
+    let_strt;
     int t;
     cin >> t;
-    while(t--)
+    while (t--)
     {
-        string str;
-        cin >> str;
-        int cnt0 = 0, cnt1 = 0;
-        for(int i = 0; i < str.size(); i++)
+        int n;
+        cin >> n;
+        vector<int> v(n);
+        for (int i = 0; i < n; i++)
         {
-            if(str[i] == '0')
-            {
-                cnt0++;
-            }
-            else {
-                cnt1++;
-            }
+            cin >> v[i];
         }
-        int t = 0;
-        //cout << cnt1 << sp << cnt0 << nl;
-        for(int i = 0; i < str.size(); i++)
+        sort(allr(v));
+        int ans = 0;
+        for (int i = 0; i + 1 < n; i += 2)
         {
-            if(str[i] == '0' && cnt1 > 0)
-            {
-                t++;
-                cnt1--;
-            }
-            else if(str[i] == '1' && cnt0 > 0)
-            {
-                t++;
-                cnt0--;
-            }
-            else{
-                break;
-            }
+            ans += max(v[i], v[i + 1]);
         }
-        //cout << cnt0 << sp << cnt1 << nl;
-        cout << str.size() - t << nl;
+        if (n % 2 != 0)
+        {
+            ans += v[n - 1];
+        }
+        cout << ans << nl;
     }
 }

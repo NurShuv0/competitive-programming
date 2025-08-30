@@ -21,47 +21,33 @@
 
 // int gcd(int a, int b) {return b == 0 ? a : gcd(b, a % b);}
 // int lcm (int a,int b ) {return a * (b/gcd(a,b));}
+ 
 using namespace std;
-
 signed main()
 {
-    let_strt
+    let_strt;
     int t;
     cin >> t;
     while(t--)
     {
-        string str;
-        cin >> str;
-        int cnt0 = 0, cnt1 = 0;
-        for(int i = 0; i < str.size(); i++)
+        int n;
+        cin >> n;
+        vector<int>v(n);
+        map<int, int>mp;
+        for(int i = 0; i < n; i++)
         {
-            if(str[i] == '0')
+            int input;
+            cin >> input;
+            mp[input]++;
+        }
+        bool flag = false;
+        for(auto &i: mp)
+        {
+            if(i.s > 1)
             {
-                cnt0++;
-            }
-            else {
-                cnt1++;
+                flag = true;
             }
         }
-        int t = 0;
-        //cout << cnt1 << sp << cnt0 << nl;
-        for(int i = 0; i < str.size(); i++)
-        {
-            if(str[i] == '0' && cnt1 > 0)
-            {
-                t++;
-                cnt1--;
-            }
-            else if(str[i] == '1' && cnt0 > 0)
-            {
-                t++;
-                cnt0--;
-            }
-            else{
-                break;
-            }
-        }
-        //cout << cnt0 << sp << cnt1 << nl;
-        cout << str.size() - t << nl;
-    }
+        cout << (flag?"YES":"NO") << nl;
+     }
 }

@@ -2,6 +2,16 @@
 using namespace std;
 int main()
 {
-	// cout <<"অহে বিশ্ব";
-	cout << "Hello world";
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        int n, m , k;
+        cin >> n >> m >> k;
+        vector<int>v(n);
+        for(int i = 0; i < n; i++)
+        {
+            
+        }
+    }
 }
