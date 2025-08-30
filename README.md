@@ -48,7 +48,7 @@ Here are the platforms where I solve problems:
 ## 🏅 My Contest Journey
 
 - **BIUPC** – University contests
-- **Codeforces** – Regular participation in Div. 2 & Div. 3 contests
+- **Codeforces** – Regular participation in Div. 2 , Div. 3  and Div. 4 contests
 - **CodeChef** – Monthly contests & practice
 - **ICPC** – Preparation for regionals
 - **Programming Hero** – Fun coding challenges
