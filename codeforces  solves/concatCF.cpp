@@ -20,13 +20,7 @@
 // int gcd (int a,int b) {return __gcd(a,b);}
 // int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-
-int concat(int x, int y) {
-    int e = to_string(y).size();
-    int d = pow(10,e);
-    return x * d + y;
-}
-signed main()
+signed main() 
 {
     let_strt;
     int t;
@@ -35,13 +29,21 @@ signed main()
     {
         int x;
         cin >> x;
-        int n = 1e9;
-        for (int i = 1; i < n; i++) {
-            int val = concat(x, i);
-            if (val % (x + i) == 0) {
-                cout << i << nl;
+        int n = 1e5;
+        bool flag = true;
+        while(true)
+        {
+            int y = 1;
+            int e = to_string(y).size();
+            int value = pow(10, e);
+            int final_n = x  * value + y;
+            if(final_n % (x + value) == 0)
+            {
+                cout << y  << nl;
                 break;
             }
+            y++;
         }
+        
     }
 }
