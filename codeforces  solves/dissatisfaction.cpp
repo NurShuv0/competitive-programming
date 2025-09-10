@@ -20,7 +20,6 @@
 // int gcd (int a,int b) {return __gcd(a,b);}
 // int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-
 signed main()
 {
     let_strt;
@@ -28,13 +27,11 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int x;
-        cin >> x;
-        int d = to_string(x).size();
-        int p = 1;
-        for (int i = 0; i < d; i++)
-            p *= 10;
-        int y = p - x;
-        cout << y << nl;
+        int n, x, t;
+        cin >> n >> x >> t;
+        int a = max(0LL, n - (t / x)) * (t / x);
+        int b = min(n - 1, (t / x) - 1) * min(n, t / x) / 2;
+        int ans = a + b;
+        cout << ans << nl;
     }
 }

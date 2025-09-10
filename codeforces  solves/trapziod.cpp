@@ -20,28 +20,36 @@
 // int gcd (int a,int b) {return __gcd(a,b);}
 // int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-
-int concat(int x, int y) {
-    int e = to_string(y).size();
-    int d = pow(10,e);
-    return x * d + y;
-}
-signed main()
+signed main() 
 {
     let_strt;
     int t;
     cin >> t;
     while(t--)
     {
-        int x;
-        cin >> x;
-        int n = 1e8;
-        for (int i = 1; i < n; i++) {
-            int val = concat(x, i);
-            if (val % (x + i) == 0) {
-                cout << i << nl;
-                break;
+        int n, d, h;
+        cin >> n >> d >>  h;
+        long double area = .5  * d * h;
+        //cout << area << nl;
+        vector<int>v(n);
+        for(int i = 0; i < n; i++)
+        {
+            cin >> v[i];
+        }
+        long double ans  = area;
+        for(int i = 0; i < n - 1; i++)
+        {
+            if(v[i + 1] - v[i] >= h)
+            {
+                ans += area;
+            }
+            else {
+                long double h2 = v[i + 1] - v[i];
+                long double upperbase = d * (h - h2)/h;
+                long double  area_t = ((d + upperbase)/2) * h2;
+                ans += area_t;
             }
         }
+        cout << setPrec(6)<< ans << nl;
     }
 }
