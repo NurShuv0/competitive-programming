@@ -84,8 +84,6 @@ signed main()
                 break;
             }
         }
-        //cout << left << sp << right << nl;
         cout << right - left + 1 << nl;
-
     }
 }
