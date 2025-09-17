@@ -38,27 +38,39 @@ signed main()
             if(v[i] == 0)
             {
                 cnt0++;
-                zero = i;
+                //zero = i;
             }
         }
         if(n == 1)
         {
             cout << 0 << nl;
+            cn;
         }
         if(cnt0 == n)
         {
             cout << n << nl;
             cn;
         }
+        vector<int>t = v;
+        sort(all(t));
         if(cnt0 == 1)
         {
+            for(int i = 1; i <= n; i++)
+            {
+                if(t[i] != i - 1)
+                {
+                    zero = i;
+                    break;
+                }
+            }
+            cout << zero << nl;
             v[zero] = zero;
         }
-        // for(int i = 1; i <= n; i++)
-        // {
-        //     cout << v[i] << sp;
-        // }
-        // cout << nl;
+        for(int i = 1; i <= n; i++)
+        {
+            cout << v[i] << sp;
+        }
+        cout << nl;
         vector<int>temp = v;
         sort(all(temp));
         if(temp == v)
