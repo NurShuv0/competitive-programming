@@ -40,18 +40,14 @@ signed main()
         }
         sort(allr(p));
         sort(all(d));
-        if(n < k)
-        {
-            k = n;
-        }
+        k = min(n, k);
         int ans = 0;
         int cnt = 0;
-        int left = 0, right = n - 1;
+        int left = 0;
         bool flag = true;
         for(int i = 0; i < k; i++)
         {
             if(d[i] == 1){
-                cnt++;
                 left++;
                 cn;
             }
@@ -60,29 +56,28 @@ signed main()
                 break;
             }
             //cout << left<< nl;
-            int x = left;
-            for(int j = 0; j < d[i] - 1; j++)
+            //int x = left;
+            for(int j = 0; j < d[i] - 1 && left < n; j++)
             {
-                if(left == n)
-                {
-                    flag = false;
-                    break;
-                }
-                ans += p[left];
-                left++;
-                cnt++;
+                // (left == n)
+                // {if
+                //     flag = false;
+                //     break;
+                // }
+                ans += p[left++];
             }
             if(!flag)
             {
                 break;
             }
-            cnt++;
-            left++;
+            if(left < n)
+            {
+                left++;
+            }
         }
         //cout << ans << nl << left << nl;
         while(left < n){
-            ans += p[left];
-            left++;
+            ans += p[left++];
         }
         cout << ans << nl;
     }
