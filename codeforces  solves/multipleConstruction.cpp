@@ -17,8 +17,9 @@
 #define mod 1000000007
 #define best LLONG_MAX
 #define wrst LLONG_MIN
+// int gcd (int a,int b) {return __gcd(a,b);}
+// int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-
 signed main()
 {
     let_strt;
@@ -28,24 +29,36 @@ signed main()
     {
         int n;
         cin >> n;
-        vector<int> v(2 * n, 0);
-        int left = 0, right = 2 * n - 1;
 
-        for (int k = n; k >= 1; k--)
+        vector<int> result(2 * n + 1, 0);
+
+        for (int i = n; i >= 1; i--)
         {
-            if (k % 2 == 1)
+            bool flag = false;
+
+            for (int j = 1; j <= 2 * n - i && !flag; j++)
             {
-                v[left] = v[left + k + 1] = k;
-                left++;
-            }
-            else
-            {
-                v[right - k - 1] = v[right] = k;
-                right--;
+                if (result[j] != 0) cn;
+                int num = j + i;
+                if (num <= 2 * n && result[num] == 0)
+                {
+                    result[j] = i;
+                    result[num] = i;
+                    flag = true;
+                }
             }
         }
 
-        for (int x : v) cout << x << sp;
+        for (int i = 1; i <= 2 * n; i++)
+        {
+            if(result[i] == 0)
+            {
+                //cout << 1 << sp;
+                //cn;
+            }
+            cout << result[i] << " " ;
+        }
         cout << nl;
     }
 }
+  

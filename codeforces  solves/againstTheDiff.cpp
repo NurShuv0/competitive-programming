@@ -17,35 +17,36 @@
 #define mod 1000000007
 #define best LLONG_MAX
 #define wrst LLONG_MIN
+// int gcd (int a,int b) {return __gcd(a,b);}
+// int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-
 signed main()
 {
     let_strt;
     int t;
     cin >> t;
-    while (t--)
+    while(t--)
     {
         int n;
         cin >> n;
-        vector<int> v(2 * n, 0);
-        int left = 0, right = 2 * n - 1;
-
-        for (int k = n; k >= 1; k--)
+        vector<int> v(n + 1), dp(n + 1);
+        for(int i = 1; i <= n; i++)
         {
-            if (k % 2 == 1)
-            {
-                v[left] = v[left + k + 1] = k;
-                left++;
+            cin >> v[i];
+        }
+        vector<deque<int>> dq(n + 1);
+        for(int i = 1; i <= n; i++)
+        {
+            dp[i] = dp[i - 1];
+            dq[v[i]].push_back(i);
+            if(dq[v[i]].size() > v[i]){
+                dq[v[i]].pop_front();
             }
-            else
+            if(dq[v[i]].size() == v[i])
             {
-                v[right - k - 1] = v[right] = k;
-                right--;
+                dp[i] = max(dp[i], dp[dq[v[i]].front() - 1] + v[i]);
             }
         }
-
-        for (int x : v) cout << x << sp;
-        cout << nl;
+        cout << dp[n] << nl;
     }
 }
