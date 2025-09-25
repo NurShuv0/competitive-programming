@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
-#define let_strt                      \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(nullptr);
+#define let_strt ios_base::sync_with_stdio(false); cin.tie(nullptr);
 #define nl "\n"
 #define int long long
 #define sp ' '
@@ -20,37 +18,33 @@
 #define best LLONG_MAX
 #define wrst LLONG_MIN
 using namespace std;
-signed main()
+signed main() 
 {
     let_strt;
     int t;
     cin >> t;
-    while (t--)
+    while(t--)
     {
         int n;
         cin >> n;
-        vector<int> v(n);
-        map<int, int> mp;
-        for (int i = 0; i < n; i++)
+        map<int,int>mp,mp2;
+        for(int i = 0; i < n; i++)
         {
-            cin >> v[i];
-            mp[v[i]]++;
+            int x,y;
+            cin >> x >> y;
+            mp[x]++;
+            mp2[y]++;
         }
-        vector<int> cnt,res;
-        for (auto &p : mp)
+        int ans = 0;
+        for(auto& m:mp)
         {
-            cnt.pb(p.s);
-            //cout << p.s << sp;
-        }
-        for (int i = 1; i <= n; i++)
-        {
-            int cntt = 0;
-            for (int c : cnt)
+            //cout << m.f << sp << m.s << nl;
+            if(m.s > 1)
             {
-                if (c >= i)cntt++;
+                ans += n - 2;
             }
-            res.pb(cntt * i);
         }
-        cout << *max_element(all(res)) << nl;
+        cout << ans <<nl;
     }
+    return 0;
 }

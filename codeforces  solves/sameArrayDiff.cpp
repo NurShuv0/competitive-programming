@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
-#define let_strt                      \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(nullptr);
+#define let_strt ios_base::sync_with_stdio(false); cin.tie(nullptr);
 #define nl "\n"
 #define int long long
 #define sp ' '
@@ -19,38 +17,28 @@
 #define mod 1000000007
 #define best LLONG_MAX
 #define wrst LLONG_MIN
+// int gcd (int a,int b) {return __gcd(a,b);}
+// int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
 signed main()
 {
     let_strt;
     int t;
     cin >> t;
-    while (t--)
+    while(t--)
     {
         int n;
         cin >> n;
-        vector<int> v(n);
-        map<int, int> mp;
-        for (int i = 0; i < n; i++)
+        int temp = n;
+        for(int i = 0; i < n; i++)
         {
-            cin >> v[i];
-            mp[v[i]]++;
+            cout << temp-- << sp;
         }
-        vector<int> cnt,res;
-        for (auto &p : mp)
+        cout << n << sp;
+        for(int i = 1; i < n; i++)
         {
-            cnt.pb(p.s);
-            //cout << p.s << sp;
+            cout << i << sp;
         }
-        for (int i = 1; i <= n; i++)
-        {
-            int cntt = 0;
-            for (int c : cnt)
-            {
-                if (c >= i)cntt++;
-            }
-            res.pb(cntt * i);
-        }
-        cout << *max_element(all(res)) << nl;
+        cout << nl;
     }
 }
