@@ -20,7 +20,6 @@
 #define best LLONG_MAX
 #define wrst LLONG_MIN
 using namespace std;
-
 signed main()
 {
     let_strt;
@@ -29,44 +28,28 @@ signed main()
     while (t--)
     {
         int n;
-        string str;
-        cin >> n >> str;
-
-        vector<int> posA, posB;
+        cin >> n;
+        vector<int> v(n);
+        map<int, int> mp;
         for (int i = 0; i < n; i++)
         {
-            if (str[i] == 'a')
-                posA.pb(i);
-            else
-                posB.pb(i);
+            cin >> v[i];
+            mp[v[i]]++;
         }
-
-        int ka = posA.size();
-        int kb = posB.size();
-
-        int ansA = 0, ansB = 0;
-
-        if (ka > 1)
+        vector<int> cnt,res;
+        for (auto &p : mp)
         {
-            int ma = ka / 2;
-            int mdnA = posA[ma];
-            for (int i = 0; i < ka; i++)
-            {
-                ansA += abs(posA[i] - (mdnA - ma + i));
-            }
+            cnt.pb(p.s);
         }
-
-        if (kb > 1)
+        for (int i = 1; i <= n; ++i)
         {
-            int mb = kb / 2;
-            int mdnB = posB[mb];
-            for (int i = 0; i < kb; i++)
+            int cntt = 0;
+            for (int c : cnt)
             {
-                ansB += abs(posB[i] - (mdnB - mb + i));
+                if (c >= i)cntt++;
             }
+            res.pb(cntt * i);
         }
-
-        cout << min(ansA, ansB) << nl;
+        cout << *max_element(all(res)) << nl;
     }
-    return 0;
 }
