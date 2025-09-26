@@ -69,12 +69,6 @@ signed main()
                 ans++;
             }
         }
-        // for(int i = 0; i < n - 2; i++)
-        // {
-        //     int fst = v[i];
-        //     int snd = v[i + 1];
-        //     int trd = v[i + 2];
-        // }
         cout << ans <<nl;
     }
     return 0;
