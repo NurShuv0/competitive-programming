@@ -38,7 +38,7 @@ signed main()
         vector<vector<char>> g(n, vector<char>(n, 'L'));
 
         int cnt = 0;
-        int a, b;
+        int a = 0, b = 0;
         for (int i = 0; i < n && cnt < k; i++)
         {
             for (int j = 0; j < n && cnt < k; j++)
@@ -78,6 +78,10 @@ signed main()
             else{
                 g[a][b+1] = 'R';
             }
+        }
+        if(k == 0)
+        {
+            a--;
         }
         for (int i = a + 1; i < n; i++)
         {
