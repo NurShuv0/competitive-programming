@@ -36,7 +36,7 @@ signed main()
             cin >> input;
             v[input]++;
         }
-        for(int i = 0; i < 101; i++)
+        for(int i = 0; i <= 100; i++)
         {
             if(v[i] == 0)
             {
