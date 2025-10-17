@@ -20,39 +20,21 @@
 // int gcd (int a,int b) {return __gcd(a,b);}
 // int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-signed main()
+signed main() 
 {
     let_strt;
     int t;
     cin >> t;
-    while (t--)
+    while(t--)
     {
-        int a, b;
-        cin >> a >> b;
-        int temp = a ^ b;
-        if (a == b)
+        int n;
+        cin >> n;
+        vector<int>v(n);
+        for(int i = 0; i < n; i++)
         {
-            cout << 0 << nl;
-            cn;
+            cin >> v[i];
         }
-        else if (a >= temp)
-        {
-            cout << 1 << nl << temp << nl;
-            cn;
-        }
-        else
-        {
-            int temp2 = a | b;
-            int temp1 = a ^ (temp2);
-            int temp3 = temp2 ^ b;
-            if (temp1 <= a && temp3 <= temp2)
-            {
-                cout << 2 << nl << temp1 << sp << temp3 << nl;
-            }
-            else
-            {
-                cout << -1 << nl;
-            }
-        }
+        cout << *max_element(all(v)) << nl;
     }
+    return 0;
 }

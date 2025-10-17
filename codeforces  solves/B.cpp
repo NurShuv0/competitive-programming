@@ -1,23 +1,58 @@
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
+#define let_strt ios_base::sync_with_stdio(false); cin.tie(nullptr);
+#define nl "\n"
+#define int long long
+#define sp ' '
+#define pi 3.14159265358979323846
+#define square(n) (n) * (n)
+#define cube(n) (n) * (n) * (n)
+#define setPrec(n) fixed << setprecision(n)
+#define circulate(a, b) (((a % b) + b) % b)
+#define pb push_back
+#define f first
+#define s second
+#define all(v) v.begin(), v.end()
+#define allr(v) v.rbegin(), v.rend()
+#define cn continue
+#define mod 1000000007
+#define best LLONG_MAX
+#define wrst LLONG_MIN
+// int gcd (int a,int b) {return __gcd(a,b);}
+// int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
+signed main() 
+{
+    let_strt;
     int t;
     cin >> t;
-    while (t--) {
-        long long a, b, k;
-        cin >> a >> b >> k;
-        long long g = __gcd(a, b);
-        a /= g;
-        b /= g;
-        if (a <= k && b <= k) {
-            cout << "1\n";
-        } else {
-            cout << "2\n";
+    while(t--)
+    {
+        int n;
+        cin >> n;
+        string str;
+        cin >> str;
+        string rev = str;
+        reverse(all(rev));
+        //cout << rev << nl;
+        if(n == 1)
+        {
+            cout << -1 << nl;
+            cn;
         }
+        if(rev == str)
+        {
+            cout << 0 << nl;
+            cn;
+
+        }
+        cout << n - 1 << nl;
+        for(int i = 0; i < n - 1; i++)
+        {
+            cout << i + 2 << sp;
+        }
+        cout << nl;
+
+
     }
     return 0;
 }

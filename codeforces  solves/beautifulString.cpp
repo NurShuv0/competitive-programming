@@ -20,39 +20,52 @@
 // int gcd (int a,int b) {return __gcd(a,b);}
 // int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-signed main()
+signed main() 
 {
     let_strt;
     int t;
     cin >> t;
-    while (t--)
+    while(t--)
     {
-        int a, b;
-        cin >> a >> b;
-        int temp = a ^ b;
-        if (a == b)
+        int n;
+        cin  >> n;
+        string str;
+        cin >> str;
+        string rev = str;
+        reverse(all(rev));
+        if(rev == str)
         {
             cout << 0 << nl;
             cn;
         }
-        else if (a >= temp)
+        vector<int> cnt0, cnt1;
+        for(int i = 0; i < n; i++)
         {
-            cout << 1 << nl << temp << nl;
-            cn;
+            if(str[i] == '0')
+            {
+                cnt0.pb(i + 1);
+            }
+            else {
+                cnt1.pb(i + 1);
+            }
         }
-        else
+        if(cnt1.size() > 0)
         {
-            int temp2 = a | b;
-            int temp1 = a ^ (temp2);
-            int temp3 = temp2 ^ b;
-            if (temp1 <= a && temp3 <= temp2)
+            cout << cnt1.size() << nl;
+            for(int i = 0; i < cnt1.size(); i++)
             {
-                cout << 2 << nl << temp1 << sp << temp3 << nl;
+                cout << cnt1[i] << sp;
             }
-            else
+            cout << nl;
+        }
+        else {
+            cout << cnt0.size() << nl;
+            for(int i = 0; i < cnt0.size(); i++)
             {
-                cout << -1 << nl;
+                cout << cnt0[i] << sp; 
             }
+            cout << nl;
         }
     }
+    return 0;
 }
