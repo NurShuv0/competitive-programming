@@ -40,17 +40,49 @@ signed main()
         // {
         //     cout << c.f << sp << c.s << nl;
         // }
+        int i = 0;
+        int temp;
+        bool flag = false;
+        int cnt = 0;
         for(auto& c: mp)
         {
-            int i = 0;
-            if(c.s > i)
+            temp = c.f;
+            if(c.f == 0)
             {
+                //cout<< "cf" << c.f << nl;
+                if(c.s < 2)
+                {
+                    cnt++;
+                }
                 i++;
+                cn;
             }
-            else {
-                cout << c.f << nl;
+            if(c.f != i)
+            {
+                cout << i << nl;
+                flag = true;
                 break;
             }
+            else if(c.s > 1 && c.f == i)
+            {
+                i++;
+                cn;
+            }
+            else {
+                cnt++;
+                //cout << cnt << sp;
+                if(cnt == 2)
+                {
+                    flag = true;
+                    cout << i << nl;
+                    break;
+                }
+                i++;
+            }
+        }
+        if(!flag)
+        {
+            cout << temp + 1 << nl;
         }
     }
     return 0;
