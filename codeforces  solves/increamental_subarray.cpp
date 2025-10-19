@@ -35,31 +35,32 @@ signed main()
             cin >> v[i];
         }
         int mx = *max_element(all(v));
-        bool flag = false;
-        for(int i = 0; i < k - 1; i++)
-        {
-            if(v[i] == mx && v[i+1] == 1)
-            {
-                flag = true;
-                break;
-            }
-        }
-        for(int i = 1; i < k; i++)
-        {
-            if(v[i] == 1 && v[i - 1] != 1)
-            {
-                flag = true;
-                break;
-            }
-        }
-        if((k == 2 && v[0] == 1 && v[1] == 1) || (mx == n) || (flag))
+        vector<int>temp;
+        temp = v;
+        sort(all(temp));
+        // for(auto& c: temp)
+        // {
+        //     cout <<"c " << c <<sp;
+        // }
+        // cout << nl;
+        if(k == 2 && v[0] == 1 && v[1] == 1)
         {
             cout << 1 << nl;
             cn;
         }
-        
-        //cout << mx <<nl;
-        cout << n - mx + 1 << nl;
+        if(mx == n)
+        {
+            cout << 1 << nl;
+            cn;
+        }
+        if(temp == v)
+        {
+            cout << n - mx + 1 << nl;
+            cn;
+        }
+        else {
+            cout << 1 << nl;
+        }
     }
     return 0;
 }
