@@ -28,19 +28,36 @@ signed main()
     while(t--)
     {
         int n, k;
-        string s;
-        cin >> n >> k >> s;
-        int last = -k;
+        cin >>  n >> k;
+        string str;
+        cin >> str;
         int ans = 0;
-        for(int i = 0; i < n; ++i){
-            if(s[i] == '1'){
-                if ((i + 1) - last >= k) {
-                    ++ans;
-                    last = i + 1;
-                } else {
-                    last = i + 1;
+        if(str[0] == '1')
+        {
+            ans++;
+        }
+        for(int i = 1; i < n; i++)
+        {
+            if(str[i] == '1')
+            {
+                bool flag = true;
+                int j = 1;
+                int temp = k - 1;
+                while(temp--)
+                {
+                    if(str[i - j] == '1')
+                    {
+                        flag = false;
+                        break;
+                    }
+                    j++;
+                }
+                if(flag)
+                {
+                    ans++;
                 }
             }
+            //cout  << nl;
         }
         cout << ans << nl;
     }

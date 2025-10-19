@@ -66,6 +66,13 @@ signed main()
             }
             cout << nl;
         }
+        vector<int>temp;
+        for(int i = 0; i < n; i++)
+        {
+            int input;
+            cin >> input;
+            temp.pb(input);
+        }
     }
     return 0;
 }
