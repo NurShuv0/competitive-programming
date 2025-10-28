@@ -27,10 +27,30 @@ signed main()
     cin >> t;
     while(t--)
     {
-        int a, b, c, d;
-        cin >> a >> b >> c >> d;
-        cout <<(a == b && b == c && c == d && a == d?"YES":"NO") << nl;
-        
+        int n;
+        cin >> n;
+        vector<int>v(n);
+        int odd = 0, even = 0;
+        for(int i = 0; i < n; i++)
+        {
+            cin >> v[i];
+            if(v[i] % 2 == 0)
+            {
+                odd++;
+            }
+            else{
+                even++;
+            }
+        }
+        if(odd > 0 && even > 0)
+        {
+            sort(all(v));
+        }
+        for(int i = 0; i < n; i++)
+        {
+            cout << v[i] <<  sp;
+        }
+        cout << nl;
     }
     return 0;
 }

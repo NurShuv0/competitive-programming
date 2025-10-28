@@ -27,10 +27,36 @@ signed main()
     cin >> t;
     while(t--)
     {
-        int a, b, c, d;
-        cin >> a >> b >> c >> d;
-        cout <<(a == b && b == c && c == d && a == d?"YES":"NO") << nl;
-        
+        int n;
+        cin >> n;
+        vector<int>v(n),c(n);
+        int cost = 0;
+        for(int i = 0; i < n; i++)
+        {
+            cin >> v[i];
+        }
+        for(int i = 0; i < n; i++)
+        {
+            cin >> c[i];
+            cost += c[i];
+        }
+        int mx = 0;
+        int temp;
+        vector<int>tm(n);
+        for(int i = 0; i < n; i++)
+        {
+            tm[i] = c[i];
+            for(int j = 0; j < i; j++)
+            {
+                if(v[i] <= v[j])
+                {
+                    tm[i] = max(c[i], tm[j] + c[i]);
+                }
+                mx = max(mx, tm[i]);
+            }
+        }
+        cout << (cost - mx) << nl;
+
     }
     return 0;
 }

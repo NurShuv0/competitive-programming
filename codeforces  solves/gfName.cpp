@@ -27,10 +27,13 @@ signed main()
     cin >> t;
     while(t--)
     {
-        int a, b, c, d;
-        cin >> a >> b >> c >> d;
-        cout <<(a == b && b == c && c == d && a == d?"YES":"NO") << nl;
-        
+        int n;
+        cin >> n;
+        string a, b;
+        cin >> a >> b;
+        sort(all(a));
+        sort(all(b));
+        cout << (a == b? "YES":"NO") << nl;
     }
     return 0;
 }

@@ -23,14 +23,6 @@ using namespace std;
 signed main() 
 {
     let_strt;
-    int t;
-    cin >> t;
-    while(t--)
-    {
-        int a, b, c, d;
-        cin >> a >> b >> c >> d;
-        cout <<(a == b && b == c && c == d && a == d?"YES":"NO") << nl;
-        
-    }
+    
     return 0;
 }
