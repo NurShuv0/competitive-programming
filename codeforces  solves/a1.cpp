@@ -1,46 +1,55 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-long long gcd(long long a, long long b) {
-    while (b) {
-        a %= b;
-        swap(a, b);
-    }
-    return a;
-}
+#define int int64_t
 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    
-    int t;
-    cin >> t;
-    
-    while (t--) {
+int32_t main()
+{
+    int tt;
+    cin >> tt;
+    while (tt--)
+    {
         int n;
         cin >> n;
-        vector<long long> a(n);
-        
-        for (int i = 0; i < n; i++) {
-            cin >> a[i];
-        }    
-        long long ans = -1;
-        for (long long x = 2; x <= 100000; x++) {
-            bool found = false;
-            for (int i = 0; i < n; i++) {
-                if (gcd(a[i], x) == 1) {
-                    found = true;
+        vector<int> a(n);
+        for (auto &c : a)
+        {
+            cin >> c;
+        }
+        sort(a.begin(), a.end());
+        vector<int> T;
+        bool ok = true;
+        for (int i = 1; i < int(a.size()) && ok; i++)
+        {
+            if (a[i] % a[0] == 0)
+            {
+                T.push_back(a[i]);
+            }
+        }
+        bool flag = false;
+        if (T.size() == 0)
+        {
+            cout << "NO" << "\n";
+        }
+        else if(T.size() == 1 && T[0] == a[0])
+        {
+            flag = true;
+        }
+        else
+        {
+            int gc = T[0];
+            for (int i = 1; i < int(T.size()); i++)
+            {
+                gc = __gcd(gc, T[i]);
+                if (gc == a[0])
+                {
+                    flag = true;
                     break;
                 }
             }
-            if (found) {
-                ans = x;
-                break;
-            }
         }
-        
-        cout << ans << '\n';
+        cout << (flag ? "YES" : "NO") << "\n";
     }
-    
     return 0;
 }
