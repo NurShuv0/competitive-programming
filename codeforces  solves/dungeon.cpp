@@ -56,7 +56,7 @@ signed main() {
         for (int i = 0; i < rwd.size(); i++) {
             int life = rwd[i].first;
             int r = rwd[i].second;
-            //cout << life << sp << rew << nl;
+            //cout << life << sp << r << nl;
             bool flag = false;
             auto it = srd.lower_bound(life);
             if(it != srd.end())
