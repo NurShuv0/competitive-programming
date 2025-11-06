@@ -17,55 +17,91 @@
 #define mod 1000000007
 #define best LLONG_MAX
 #define wrst LLONG_MIN
+// int gcd (int a,int b) {return __gcd(a,b);}
+// int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-signed main() 
-{
+
+signed main() {
     let_strt;
     int t;
     cin >> t;
-    while(t--)
-    {
-        int n, x;
-        cin >> n >> x;
-        vector<int> v(n);
-        for(int i = 0; i < n; i++) cin >> v[i];
-
-        multiset<int> ms(v.begin(), v.end());
-        vector<int> order;
-        order.reserve(n);
-        long long S = 0;
-        long long ans = 0;
-
-        while(!ms.empty())
-        {
-            int need = x - (S % x);
-            if(need == x) need = x;
-            if(!ms.empty() && *ms.rbegin() >= need)
+    while (t--) {
+        int n, m;
+        cin >> n >> m;
+        vector<int> a(n);
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+        }
+        vector<int> b(m), c(m);
+        for (int i = 0; i < m; i++) {
+            cin >> b[i];
+        }
+        for (int i = 0; i < m; i++) {
+            cin >> c[i];
+        }
+        vector<pair<int, int>> monsters(m), other;
+        for (int i = 0; i < m; i++) {
+            monsters[i] = {b[i], c[i]};
+        }
+        sort(all(monsters));
+        priority_queue<int, vector<int>, greater<int>> swords;
+        for (int i = 0; i < n; i++) {
+            swords.push(a[i]);
+        }
+        int ans = 0;
+        for (int i = 0; i < m; i++) {
+            int life = monsters[i].first;
+            int reward = monsters[i].second;
+            if(reward == 0)
             {
-                auto it = prev(ms.end());
-                int val = *it;
-                ans += val;
-                S += val;
-                order.push_back(val);
-                ms.erase(it);
+                other.push_back(monsters[i]);
+                continue;
             }
-            else
+           // cout << life <<" " << reward << endl;
+            vector<int> temp;
+            bool found = false;
+            //cout << ans << endl;
+            while (!swords.empty()) {
+                int sword = swords.top();
+                //cout << sword << endl;
+                swords.pop(); 
+                if (sword >= life) {
+                    ans++;
+                    found = true;
+                    if (reward > 0) {
+                        swords.push(max(sword, reward));
+                    }  
+                    for (int s : temp) {
+                        swords.push(s);
+                    }
+                    break;
+                } else {
+                    temp.push_back(sword);
+                }
+            }
+            
+            if (!found) {
+                for (int s : temp) {
+                    swords.push(s);
+                }
+            }
+            //cout << ans << endl;
+        }
+        sort(all(other));
+        for(int i = 0; i < other.size(); i++)
+        {
+            while(!swords.empty())
             {
-                auto it = ms.begin();
-                int val = *it;
-                S += val;
-                order.push_back(val);
-                ms.erase(it);
+                int srd = swords.top();
+                swords.pop();
+                if(srd >= other[i].first)
+                {
+                    ans++;
+                    break;
+                }
             }
         }
-
         cout << ans << nl;
-        for(size_t i = 0; i < order.size(); ++i)
-        {
-            if(i) cout << sp;
-            cout << order[i];
-        }
-        cout << nl;
     }
     return 0;
 }

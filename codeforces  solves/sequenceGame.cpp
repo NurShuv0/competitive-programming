@@ -34,29 +34,16 @@ signed main()
         {
             cin >> v[i];
         }
-        bool flag = false;
-        for(int i = 0; i < n && flag == false; i++)
+        int x;
+        cin >> x;
+        int mx = *max_element(all(v));
+        int mn = *min_element(all(v));
+        if(mx >= x && mn <= x)
         {
-            for(int j = i + 1; j < n; j++)
-            {
-                if(v[i] == 1)
-                {
-                    cout << v[i] << sp << v[j] << nl;
-                    flag = true;
-                    break;
-                }
-                int x = v[j] % v[i];
-                if(x % 2 == 0)
-                {
-                    cout << v[i] << sp << v[j] << nl;
-                    flag = true;
-                    break;
-                }
-            }
+            cout << "YES" << nl;
         }
-        if(!flag)
-        {
-            cout << -1 << nl;
+        else {
+            cout << "NO" <<nl;
         }
     }
     return 0;
