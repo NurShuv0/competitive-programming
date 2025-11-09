@@ -23,9 +23,12 @@ using namespace std;
 
 
 bool cmp(pair<int,int> a, pair<int,int> b) {
-    return a.second < b.second;
+    if(a.s == b.s)
+    {
+        return a.f < b.f;
+    }
+    return a.second > b.second; 
 }
-
 
 signed main() 
 {
@@ -34,39 +37,37 @@ signed main()
     cin >> t;
     while(t--)
     {
-        int n;
-        cin >> n;
-        vector<int>v[n], m;
-        vector<pair<int, int>>vp;
-        for(int i = 0; i < n; i++)
+        int n, k;
+        cin >> n >> k;
+        vector<int>ans;
+        vector<pair<int,int>>vp;
+        for(int i = 1; i <= n; i++)
         {
-            int size;
-            cin >> size;
-            for(int j = 0; j < size; j++)
+            int input;
+            cin >> input;
+            if(input % k == 0)
             {
-                int input;
-                cin >> input;
-                v[i].pb(input);
+                ans.pb(i);
+                cn;
             }
-            sort(all(v[i]));
-            int mn = v[i][1];
-            vp.pb({i,mn});
-            m.pb(*min_element(all(v[i])));
+            vp.pb({i, input % k});
         }
-        sort(allr(vp),cmp);
-        for(auto& c: vp)
+        sort(all(vp), cmp);
+        // for(auto& c: vp)
+        // {
+        //     cout << c.f << sp << c.s << nl;
+        // }
+        //sort(all(vp));
+        for(int i = 0; i < vp.size(); i++)
         {
-            cout << c.f << sp << c.s << nl;
+            ans.pb(vp[i].f);
         }
-        sort(all(vp),cmp);
-        int ans = 0;
-        for(auto& c: vp)
+        for(int i = 0; i < ans.size();  i++)
         {
-            ans += c.s;
+            cout << ans[i] << sp;
         }
-        ans -= vp[0].s;
-        ans += *min_element(all(m));
-        //cout << ans << nl;
+        cout << nl;
+
     }
     return 0;
 }
