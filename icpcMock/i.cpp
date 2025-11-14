@@ -39,13 +39,7 @@ signed main()
         pmx[0] = wrst;
         for(int i = 2; i <= n; i++)
         {
-            if(pmx[i-1] < v[i])
-            {
-                pmx[i] = v[i];
-            }
-            else{
-                pmx[i] = pmx[i-1];
-            }
+            pmx[i] = max(pmx[i-1], v[i]);
             //cout << pmx[i] << sp;
         }
         //cout << nl;
@@ -53,13 +47,7 @@ signed main()
         smn[n+1] = best;
         for(int i = n-1; i > 0; i--)
         {
-            if(smn[i+1] > v[i])
-            {
-                smn[i] = v[i];
-            }
-            else {
-                smn[i] = smn[i+1];
-            }
+            smn[i] = min(smn[i+1], v[i]);
             //cout << smn[i] << sp;
         }
         //cout << nl;
