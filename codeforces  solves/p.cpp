@@ -1,38 +1,43 @@
 #include <bits/stdc++.h>
-#define let_strt ios_base::sync_with_stdio(false); cin.tie(nullptr);
-#define nl "\n"
-#define int long long
-#define sp ' '
 using namespace std;
-
-signed main() 
+int main()
 {
-    let_strt;
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int t;
-    cin >> t;
-    while(t--)
+    if (!(cin >> t))
+        return 0;
+    while (t--)
     {
-        int a, b, n;
-        cin >> a >> b >> n;
-        
-        int ans = 0;
-        int m = n;
-        
-        while(m > 0) {
-            double len = min((double)b, (double)a / m);
-         
-            int tabs_can_close = (int)(a / len);
-            
-            if(tabs_can_close >= m) {
-                ans++;
-                break;
-            } else {
-                ans++;
-                m -= tabs_can_close;
-            }
+        int n;
+        cin >> n;
+        vector<int> a(n), b(n);
+        for (int i = 0; i < n; ++i)
+            cin >> a[i];
+        for (int i = 0; i < n; ++i)
+            cin >> b[i];
+        int xa = 0, xb = 0;
+        for (int i = 0; i < n; ++i)
+        {
+            xa ^= a[i];
+            xb ^= b[i];
         }
-        
-        cout << ans << nl;
+        if (xa == xb)
+        {
+            cout << "Tie\n";
+            continue;
+        }
+        int last_diff = -1;
+        for (int i = n - 1; i >= 0; i--)
+            if (a[i] != b[i])
+            {
+                last_diff = i;
+                break;
+            }
+        if (last_diff % 2 == 0)
+            cout << "Ajisai\n";
+        else
+            cout << "Mai\n";
     }
     return 0;
 }
