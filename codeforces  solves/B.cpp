@@ -30,34 +30,80 @@ signed main()
         int n;
         cin >> n;
         vector<int>v(n);
+        map<int,int>mp;
         for(int i = 0; i < n; i++)
         {
             cin >> v[i];
+            mp[v[i]]++;
         }
-        bool flag = false;
-        for(int i = 0; i < n && flag == false; i++)
+        // for(auto& c: mp)
+        // {
+        //     cout << c.f << sp << c.s << nl;
+        // }
+        vector<int>p,q;
+        cout << p.size() << sp << q.size();
+        int i = 0;
+        for(auto& c: mp)
         {
-            for(int j = i + 1; j < n; j++)
+            if(p.size() < n)
             {
-                if(v[i] == 1)
+                p[i] = c.f;
+            }
+            else {
+                q.pb(c.f);
+            }
+            i++;
+        }
+        p.pb(0), q.pb(0);
+        //cout << p.size() << sp << q.size() << nl;
+        for(auto& c: mp)
+        {
+            int freq = c.s - 1;
+            if(p.size() <= n)
+            {
+                //cout << "YES" << nl;
+                while(freq--)
                 {
-                    cout << v[i] << sp << v[j] << nl;
-                    flag = true;
-                    break;
+                    p.pb(c.f);
                 }
-                int x = v[j] % v[i];
-                if(x % 2 == 0)
+            }
+            else {
+                while(freq--)
                 {
-                    cout << v[i] << sp << v[j] << nl;
-                    flag = true;
-                    break;
+                    q.pb(c.f);
                 }
             }
         }
-        if(!flag)
+        int ans = 0;
+        map<int,int>mpp, mq;
+        for(int i = 1; i <= n; i++)
         {
-            cout << -1 << nl;
+            mpp[p[i]]++;
+            mq[q[i]]++;
         }
+        for(auto& c: mpp)
+        {
+            if(c.s % 2 == 0)
+            {
+                cn;
+            }
+            else {
+                ans++;
+            }
+        }
+        for(auto& c: mq)
+        {
+            if(c.s % 2 == 0)
+            {
+                cn;
+            }
+            else {
+                ans++;
+            }
+        }
+        //cout << ans << nl;
+
+
     }
     return 0;
 }

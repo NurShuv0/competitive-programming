@@ -27,10 +27,11 @@ signed main()
     cin >> t;
     while(t--)
     {
-        int a, b, c, d;
-        cin >> a >> b >> c >> d;
-        cout <<(a == b && b == c && c == d && a == d?"YES":"NO") << nl;
-        
+        int n;
+        cin >> n;
+        int y, r;
+        cin >> y >> r;
+        cout << min(n, r + (y/2)) << nl;
     }
     return 0;
 }
