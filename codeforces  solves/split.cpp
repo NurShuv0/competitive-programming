@@ -41,7 +41,7 @@ signed main()
         //     cout << c.f << sp << c.s << nl;
         // }
         vector<int>p,q;
-        cout << p.size() << sp << q.size();
+       // cout << p.size() << sp << q.size();
         int i = 0;
         for(auto& c: mp)
         {
@@ -101,8 +101,7 @@ signed main()
                 ans++;
             }
         }
-        //cout << ans << nl;
-
+        cout << ans << nl;
 
     }
     return 0;
