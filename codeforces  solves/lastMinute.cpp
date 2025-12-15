@@ -29,26 +29,23 @@ signed main()
     {
         int n;
         cin >> n;
-        vector<int>v(n), v2(n);
-        for(int i = 0;  i < n; i++)
+        vector<int>v(n);
+        for(int i = 0; i < n; i++)
         {
             cin >> v[i];
         }
+        set<int>st;
         for(int i = 0; i < n; i++)
         {
-            cin >> v2[i];
+            if(st.find(v[i]) != st.end())
+            {
+                st.insert(v[i] + 1);
+            }
+            else {
+                st.insert(v[i]);
+            }
         }
-        int ms = 0, mns = 0;
-        for(int i = 0; i < n; i++)
-        {
-            int a = ms - v[i];
-            int b = mns - v[i];
-            int aa = v2[i] - ms;
-            int bb = v2[i] - mns;
-            mns = min({a, b, aa, bb});
-            ms = max({a, b, aa, bb});
-        }
-        cout << ms << nl;
+        cout << st.size() << nl;
     }
     return 0;
 }

@@ -29,26 +29,25 @@ signed main()
     {
         int n;
         cin >> n;
-        vector<int>v(n), v2(n);
-        for(int i = 0;  i < n; i++)
+        vector<int>a(n), b(n);
+        for(int i = 0; i < n; i++)
         {
-            cin >> v[i];
+            cin >> a[i];
         }
         for(int i = 0; i < n; i++)
         {
-            cin >> v2[i];
+            cin >> b[i];
         }
-        int ms = 0, mns = 0;
+        int mx = 0, mn = 0;
         for(int i = 0; i < n; i++)
         {
-            int a = ms - v[i];
-            int b = mns - v[i];
-            int aa = v2[i] - ms;
-            int bb = v2[i] - mns;
-            mns = min({a, b, aa, bb});
-            ms = max({a, b, aa, bb});
+            int pmx = mx;
+            mx = max({mx - a[i], mn - a[i], b[i] - mx, b[i] - mn});
+            mn = min({pmx - a[i], mn - a[i], b[i] - pmx, b[i] - mn});
+           // cout << mx << sp << mn << nl;
         }
-        cout << ms << nl;
+        cout << mx << nl;
+
     }
     return 0;
 }
