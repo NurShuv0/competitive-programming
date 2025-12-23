@@ -1,1 +1,0 @@
-{"name":"Local: energy crystal","url":"d:\\MY_CODE\\C++\\codeforces  solves\\energy crystal.cpp","tests":[{"id":1748965109083,"input":"7\n1\n5\n14\n2025\n31415\n536870910\n1000000000\n","output":"3\n7\n9\n23\n31\n59\n61\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\energy crystal.cpp","group":"local","local":true}

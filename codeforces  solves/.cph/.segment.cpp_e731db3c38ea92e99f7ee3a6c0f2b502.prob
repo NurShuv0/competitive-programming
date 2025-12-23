@@ -1,1 +1,0 @@
-{"name":"Local: segment","url":"d:\\MY_CODE\\C++\\codeforces  solves\\segment.cpp","tests":[{"id":1753085782003,"input":"2 4\n1 6 3 5\n1 4\n3 4\n1 2\n1 2\n","output":"1\n3\n3\n3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\segment.cpp","group":"local","local":true}

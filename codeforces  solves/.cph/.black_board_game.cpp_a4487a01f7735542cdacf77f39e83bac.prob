@@ -1,1 +1,0 @@
-{"name":"Local: black_board_game","url":"d:\\MY_CODE\\C++\\codeforces  solves\\black_board_game.cpp","tests":[{"id":1751380903440,"input":"5\n2\n4\n5\n7\n100\n","output":"Alice\nBob\nAlice\nAlice\nBob\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\black_board_game.cpp","group":"local","local":true}

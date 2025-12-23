@@ -1,1 +1,0 @@
-{"name":"Local: capsLock","url":"d:\\MY_CODE\\C++\\codeforces  solves\\capsLock.cpp","tests":[{"id":1749200989275,"input":"cAPS\n","output":"Caps"},{"id":1749201207438,"input":"Lock\n","output":"Lock\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\capsLock.cpp","group":"local","local":true}

@@ -1,1 +1,0 @@
-{"name":"Local: ribon","url":"d:\\MY_CODE\\C++\\codeforces  solves\\ribon.cpp","tests":[{"id":1750325236135,"input":"5 5 3 2\n","output":"2\n"},{"id":1750325253702,"input":"7 5 5 2\n","output":"2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\ribon.cpp","group":"local","local":true}

@@ -1,1 +1,0 @@
-{"name":"Local: validParenthesis","url":"d:\\MY_CODE\\C++\\codeforces  solves\\validParenthesis.cpp","tests":[{"id":1754856811639,"input":"3\n()(())\n(()()\n))((","output":"1\n0\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\validParenthesis.cpp","group":"local","local":true}

@@ -1,1 +1,0 @@
-{"name":"Local: dfs_twoButton","url":"d:\\MY_CODE\\C++\\codeforces  solves\\dfs_twoButton.cpp","tests":[{"id":1751589617336,"input":"4 6\n","output":"2\n"},{"id":1751590436062,"input":"10 1\n","output":"9\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\dfs_twoButton.cpp","group":"local","local":true}

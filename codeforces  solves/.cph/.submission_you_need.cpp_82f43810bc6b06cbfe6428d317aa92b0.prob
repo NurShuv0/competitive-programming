@@ -1,1 +1,0 @@
-{"name":"Local: submission_you_need","url":"d:\\MY_CODE\\C++\\codeforces  solves\\submission_you_need.cpp","tests":[{"id":1754052184365,"input":"2\n3\n0 1 1\n3\n1 2 3\n","output":"3\n6\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\submission_you_need.cpp","group":"local","local":true}

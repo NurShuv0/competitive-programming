@@ -1,1 +1,0 @@
-{"name":"Local: 01Game","url":"d:\\MY_CODE\\C++\\codeforces  solves\\01Game.cpp","tests":[{"id":1748910555834,"input":"3\n01\n1111\n0011\n","output":"DA\nNET\nNET\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\01Game.cpp","group":"local","local":true}

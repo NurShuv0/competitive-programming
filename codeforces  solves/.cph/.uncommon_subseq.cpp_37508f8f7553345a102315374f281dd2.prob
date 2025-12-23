@@ -1,1 +1,0 @@
-{"name":"Local: uncommon_subseq","url":"d:\\MY_CODE\\C++\\codeforces  solves\\uncommon_subseq.cpp","tests":[{"id":1750151674716,"input":"abcd\ndefgh\n","output":"5\n"},{"id":1750151684368,"input":"a\na\n","output":"-1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\C++\\codeforces  solves\\uncommon_subseq.cpp","group":"local","local":true}

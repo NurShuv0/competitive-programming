@@ -23,5 +23,23 @@ using namespace std;
 signed main() 
 {
     let_strt;
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        int n, m;
+        cin >> n >> m;
+        if(n > m || m > (3 * n))
+        {
+            cout << "NO" << nl;
+        }
+        else if(((n % 2) && (m % 2)) || (n % 2 == 0) && (m % 2 == 0))
+        {
+            cout << "YES" << nl;
+        } 
+        else {
+            cout << "NO" << nl;
+        }
+    }
     return 0;
 }
