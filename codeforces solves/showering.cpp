@@ -20,16 +20,35 @@
 // int gcd (int a,int b) {return __gcd(a,b);}
 // int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-signed main() 
+signed main()
 {
     let_strt;
     int t;
     cin >> t;
     while(t--)
     {
-        int k, x;
-        cin >> k >> x;
-        cout <<  (k * x) + 1 << nl;
+        int n;
+        cin >> n;
+        vector<int>v(n);
+        for(int i = 0; i < n; i++)
+        {
+            cin >> v[i];
+        }
+        int sum = 0;
+        for(int i = 0;  i < n - 1; i++)
+        {
+            sum += abs(v[i] - v[i+1]);
+        }
+       // cout << sum << nl;
+        int nr = wrst;
+        for(int i = 1; i < n - 1; i++)
+        {
+            nr = max(nr, abs(v[i] - v[i-1]) + abs(v[i] - v[i+1]) - abs(v[i-1] - v[i+1]));
+           // cout << nr << sp;
+        }
+        nr = max(nr, abs(v[n-1] - v[n-2]));
+        nr = max(nr, abs(v[1] - v[0]));
+        cout << sum - nr << nl;
     }
     return 0;
 }
