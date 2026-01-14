@@ -51,7 +51,7 @@ signed main()
         //     cout << min(m % k, m) << nl;
         //     cn;
         // }
-        if(s < (m % k))
+        if(s <= (m % k))
         {
             cout << 0 << nl;cn;
         }
@@ -66,6 +66,11 @@ signed main()
             }
         }
         else {
+            if((m / k) % 2 == 0)
+            {
+                cout << abs(max(s, k) - (m % k)) << nl;
+                cn;
+            }
             cout << abs(min(s, k) - (m % k)) << nl;
         }
     }
