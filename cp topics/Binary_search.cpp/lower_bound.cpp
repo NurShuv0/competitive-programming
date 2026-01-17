@@ -25,38 +25,33 @@ signed main()
     let_strt;
     int n, q;
     cin >> n >> q;
-    vector<int>a(n), b(q);
+    vector<int>v(n), value(q);
     for(int i = 0; i < n; i++)
     {
-        cin >> a[i];
+        cin >> v[i];
     }
     for(int i = 0; i < q; i++)
     {
-        cin >> b[i];
+        cin >> value[i];
     }
     int i = 0;
     while(q--)
     {
-        int left = 0;
-        int right = n - 1;
-        bool flag = false;
-        while(left <= right)
+        // int indx = lower_bound(v.begin(), v.end(), value[i]) - v.begin();
+        // cout << indx + 1<< nl;
+        int left = -1, right = n;
+        while(left + 1 < right)
         {
             int mid = (left + right)/2;
-            if(a[mid] == b[i])
+            if(value[i] > v[mid])
             {
-                flag = true;
-                break;
-            }
-            else if(a[mid] > b[i])
-            {
-                right = mid - 1;
+                left = mid;
             }
             else {
-                left = mid + 1;
+                right = mid;
             }
         }
-        cout << (flag? "YES":"NO") <<nl;
+        cout << right + 1<< nl;
         i++;
     }
     return 0;

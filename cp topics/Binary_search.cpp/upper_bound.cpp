@@ -23,40 +23,35 @@ using namespace std;
 signed main() 
 {
     let_strt;
-    int n, q;
+    int n,  q;
     cin >> n >> q;
-    vector<int>a(n), b(q);
+    vector<int>v(n), value(q);
     for(int i = 0; i < n; i++)
     {
-        cin >> a[i];
+        cin >> v[i];
     }
     for(int i = 0; i < q; i++)
     {
-        cin >> b[i];
+        cin >> value[i];
     }
     int i = 0;
     while(q--)
     {
-        int left = 0;
-        int right = n - 1;
-        bool flag = false;
-        while(left <= right)
+        // int indx = upper_bound(v.begin(), v.end(), value[i]) - v.begin();
+        // cout << indx <<nl;
+        int left = -1, right = n;
+        while(right > left + 1)
         {
             int mid = (left + right)/2;
-            if(a[mid] == b[i])
+            if(v[mid] > value[i])
             {
-                flag = true;
-                break;
-            }
-            else if(a[mid] > b[i])
-            {
-                right = mid - 1;
+                right = mid;
             }
             else {
-                left = mid + 1;
+                left = mid;
             }
         }
-        cout << (flag? "YES":"NO") <<nl;
+        cout << left + 1 << nl;
         i++;
     }
     return 0;

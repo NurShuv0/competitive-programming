@@ -23,41 +23,17 @@ using namespace std;
 signed main() 
 {
     let_strt;
-    int n, q;
-    cin >> n >> q;
-    vector<int>a(n), b(q);
+    int n;
+    cin >> n;
+    int sum = 0;
+    int mx = wrst;
     for(int i = 0; i < n; i++)
     {
-        cin >> a[i];
+        int input;
+        cin >> input;
+        sum += input;
+        mx = max(input, mx);
     }
-    for(int i = 0; i < q; i++)
-    {
-        cin >> b[i];
-    }
-    int i = 0;
-    while(q--)
-    {
-        int left = 0;
-        int right = n - 1;
-        bool flag = false;
-        while(left <= right)
-        {
-            int mid = (left + right)/2;
-            if(a[mid] == b[i])
-            {
-                flag = true;
-                break;
-            }
-            else if(a[mid] > b[i])
-            {
-                right = mid - 1;
-            }
-            else {
-                left = mid + 1;
-            }
-        }
-        cout << (flag? "YES":"NO") <<nl;
-        i++;
-    }
+    cout << max(2 * mx, sum) << nl;
     return 0;
 }

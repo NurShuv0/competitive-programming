@@ -40,6 +40,8 @@ signed main()
             cn;
         }
         bool flag = false;
+        int last = n % 10;
+        int mx = wrst;
         int two, four, six, eight;
         while(n > 0)
         {
@@ -49,11 +51,16 @@ signed main()
             {
                 flag = true;
             }
+            mx = max(mx, digit);
             //if(digit == )
         }
         if(flag)
         {
-            cout << 1 << nl;
+            cout << 1 << nl;cn;
+        }
+        if(last < mx)
+        {
+            cout << 2 << nl;
         }
         else {
             cout << 3 << nl;

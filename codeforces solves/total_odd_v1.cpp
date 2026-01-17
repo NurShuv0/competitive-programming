@@ -23,41 +23,21 @@ using namespace std;
 signed main() 
 {
     let_strt;
-    int n, q;
-    cin >> n >> q;
-    vector<int>a(n), b(q);
-    for(int i = 0; i < n; i++)
+    int a, b;
+    cin >> a >> b;
+    if(a == b)
     {
-        cin >> a[i];
-    }
-    for(int i = 0; i < q; i++)
-    {
-        cin >> b[i];
-    }
-    int i = 0;
-    while(q--)
-    {
-        int left = 0;
-        int right = n - 1;
-        bool flag = false;
-        while(left <= right)
+        if(a % 2 == 0)
         {
-            int mid = (left + right)/2;
-            if(a[mid] == b[i])
-            {
-                flag = true;
-                break;
-            }
-            else if(a[mid] > b[i])
-            {
-                right = mid - 1;
-            }
-            else {
-                left = mid + 1;
-            }
+            cout << 0 << nl;
         }
-        cout << (flag? "YES":"NO") <<nl;
-        i++;
+        else {
+            cout << 1 << nl;
+        }
     }
+    if(a % 2 == 0)a++;
+    if(b % 2 == 0)b--;
+    //cout << a << sp << b << nl;
+    cout << abs(a - b)/2 + 1 << nl;
     return 0;
 }

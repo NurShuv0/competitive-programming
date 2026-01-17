@@ -23,41 +23,43 @@ using namespace std;
 signed main() 
 {
     let_strt;
-    int n, q;
-    cin >> n >> q;
-    vector<int>a(n), b(q);
-    for(int i = 0; i < n; i++)
+    int t;
+    cin >> t;
+    while(t--)
     {
-        cin >> a[i];
-    }
-    for(int i = 0; i < q; i++)
-    {
-        cin >> b[i];
-    }
-    int i = 0;
-    while(q--)
-    {
-        int left = 0;
-        int right = n - 1;
-        bool flag = false;
-        while(left <= right)
+        int n;
+        cin >> n;
+        vector<int>v(n);
+        map<int,int>mp;
+        for(int i = 0; i < n; i++)
         {
-            int mid = (left + right)/2;
-            if(a[mid] == b[i])
+            cin >> v[i];
+            mp[v[i]]++;
+        }
+        vector<int>fv;
+        for(auto& c:mp)
+        {
+           // cout << c.f << sp << c.s << nl;
+            fv.pb(c.s);
+        }
+        sort(allr(fv));
+        int ans = 0;
+        int prev = best;
+        for(int i = 0; i < fv.size(); i++)
+        {
+            if(fv[i] < prev)
             {
-                flag = true;
-                break;
-            }
-            else if(a[mid] > b[i])
-            {
-                right = mid - 1;
+                ans += fv[i];
+                prev = fv[i];
             }
             else {
-                left = mid + 1;
+                prev -= 1;
+                ans += prev;
             }
+            if(prev <= 0) break;
         }
-        cout << (flag? "YES":"NO") <<nl;
-        i++;
+        cout << ans << nl;
+
     }
     return 0;
 }
