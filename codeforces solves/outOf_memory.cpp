@@ -27,19 +27,32 @@ signed main()
     cin >> t;
     while(t--)
     {
-        int n;
-        cin >> n;
-        if(n == 2)
+        int n, m, r;
+        cin >> n >> m >> r;
+        vector<int>v(n);
+        for(int i = 0; i < n; i++)
         {
-            cout << 2 << nl;
-            cn;
+            cin >> v[i];
         }
-        if(n == 3)
+        vector<int>temp = v;
+        for(int i = 0; i < m; i++)
         {
-            cout << 3 << nl;
-            cn;
+            int b, c;
+            cin >> b >> c;
+            temp[b-1] += c;
+            //cout << temp[b-1] << sp;
+            if(temp[b-1] > r)
+            {
+                temp = v;
+                //cout << i << sp;
+            }
         }
-        cout << (n % 2 == 0? 0: 1) << nl;
+        for(int i = 0; i < n; i++)
+        {
+            cout << temp[i] << sp;
+        }
+        cout << nl;
+        
     }
     return 0;
 }

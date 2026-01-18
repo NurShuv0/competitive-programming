@@ -17,42 +17,60 @@
 #define mod 1000000007
 #define best LLONG_MAX
 #define wrst LLONG_MIN
-// int gcd (int a,int b) {return __gcd(a,b);}
-// int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-signed main()
+
+signed main() 
 {
     let_strt;
     int t;
     cin >> t;
-    while (t--)
+    while(t--)
     {
-        int a, b;
-        cin >> a >> b;
-        int temp = a ^ b;
-        if (a == b)
+        int n;
+        cin >> n;
+        string s;
+        cin >> s;
+        
+        int ones = 0, inversions = 0;
+        for(int i = 0; i < n; i++)
         {
-            cout << 0 << nl;
-            cn;
+            if(s[i] == '1')
+            {
+                ones++;
+            }
+            else 
+            {
+                inversions += ones;
+            }
         }
-        else if (a >= temp)
+        cout << inversions <<nl;
+        if(inversions % 2 == 0)
         {
-            cout << 1 << nl << temp << nl;
-            cn;
+            cout << "Bob" << nl;
         }
         else
         {
-            int temp2 = a | b;
-            int temp1 = a ^ (temp2);
-            int temp3 = temp2 ^ b;
-            if (temp1 <= a && temp3 <= temp2)
+            cout << "Alice" << nl;
+            
+            int f_one = -1, f_zero = -1;
+            for(int i = 0; i < n; i++)
             {
-                cout << 2 << nl << temp1 << sp << temp3 << nl;
+                if(s[i] == '1' && f_one == -1)
+                {
+                    f_one = i + 1;
+                }
             }
-            else
+            for(int i = n-1; i >= 0; i--)
             {
-                cout << -1 << nl;
+                if(s[i] == '0' && f_zero == -1)
+                {
+                    f_zero = i + 1;
+                    break;
+                }
             }
+            cout << "2" << nl;
+            cout << f_one << sp << f_zero << nl;
         }
     }
+    return 0;
 }
