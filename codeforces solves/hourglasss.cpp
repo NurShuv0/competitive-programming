@@ -27,34 +27,22 @@ signed main()
     cin >> t;
     while(t--)
     {
-        int n, m, r;
-        cin >> n >> m >> r;
-        vector<int>v(n);
-        for(int i = 0; i < n; i++)
+        int s, k, m;
+        cin >> s >> k >> m;
+        if(s <= k)
         {
-            cin >> v[i];
-        }
-        map<int,int>mp;
-        while(m--)
-        {
-            int p, q;
-            cin >> p >> q;
-            mp[p-1] += q;
-            if(mp[p-1] + v[p-1]> r)
+            int ans = s - (m % k);
+            if(ans < 0)
             {
-                mp.clear();
+                cout << 0 << nl;
+            }
+            else {
+                cout << ans << nl;
             }
         }
-        for(auto& c: mp)
-        {
-            v[c.f] += c.s;
+        else {
+            cout << ((m % (2 * k)) < k ? s - m % k : k - m % k) <<  nl;
         }
-        for(int i = 0; i < n; i++)
-        {
-            cout << v[i] <<sp;
-        }
-        cout << nl;
-        
     }
     return 0;
 }
