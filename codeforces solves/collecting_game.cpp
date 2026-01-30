@@ -27,35 +27,43 @@ signed main()
     cin >> t;
     while(t--)
     {
-        int n,k;
-        cin >> n >> k;
-        vector<int>a(n), b(n);
+        int n;
+        cin >> n;
+        vector<int>v(n);
         for(int i = 0; i < n; i++)
         {
-            cin >> a[i];
+            cin >> v[i];
         }
-        for(int i = 0; i < n; i++)
-        {
-            cin >> b[i];
-        }
-        int mxa = *max_element(all(a));
-        int mxb = *max_element(all(b));
-        vector<int>prefmax(n);
-        prefmax[0] = b[0];
+        vector<int> temp = v;
+        sort(all(temp));
+        vector<int>pref(n);
+        pref[0] = temp[0];
         for(int i = 1; i < n; i++)
         {
-            prefmax[i] = max(prefmax[i-1], b[i]);
-            //cout << prefmax[i] << sp;
+            pref[i] = pref[i-1] + temp[i];
+            //cout << pref[i] << sp;
         }
-        int ans = 0;
-        int sum = 0;
-        for(int i = 0; i < min(n, k); i++)
+        for(int i = 0; i < n; i++)
         {
-            sum += a[i];
-            ans = max(ans, (sum + (k - (i + 1)) * prefmax[i]));
-            //cout << ans << sp;
+            int track = lower_bound(all(temp),v[i]) - temp.begin();
+           // track--;
+            while(true)
+            {
+                int sum = pref[track];
+                int comp = lower_bound(all(temp), sum) - temp.begin();
+               // comp--;
+                if(comp > track)
+                {
+                    track = comp;
+                }
+                else {
+                    break;
+                }
+                
+            }
+            cout << track << sp;
         }
-        cout << ans <<nl;
+        cout << nl;
     }
     return 0;
 }
