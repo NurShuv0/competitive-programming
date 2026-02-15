@@ -21,18 +21,14 @@
 // int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
 
-
-bool parity(int a)
-{
-    if(a % 2 == 0)
-    {
-        return true;
+int sum(int n) {
+    int s = 0;
+    while (n) {
+        s += n % 10;
+        n /= 10;
     }
-    else {
-        return false;
-    }
+    return s;
 }
-
 
 signed main() 
 {
@@ -43,28 +39,16 @@ signed main()
     {
         int n;
         cin >> n;
-        vector<int>v(n);
-        for(int i = 0; i < n; i++)
+        int ans = 0;
+        for(int i = n + 1; i < n + 1e5; i++)
         {
-            cin >> v[i];
-        }
-        vector<int>ans(n);
-        ans[0] = v[0];
-        for(int i = 1; i < n; i++)
-        {
-            if(parity(v[i]) == parity(v[i-1]) || ans[i-1] < 0)
+            if(i - sum(i) == n)
             {
-                ans[i] = v[i];
-            }
-            else {
-                ans[i] = v[i] + ans[i-1];
+                ans++;
             }
         }
-        // for(auto& c: ans)
-        // {
-        //    // cout << c << sp;
-        // }
-        cout << *max_element(all(ans)) << nl;
+        cout << ans << nl;
+        //cout << (n % 3 == 0 && n % 9 == 0? 10 : 0) << nl;
     }
     return 0;
 }
