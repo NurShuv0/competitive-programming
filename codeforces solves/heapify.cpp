@@ -20,7 +20,6 @@
 // int gcd (int a,int b) {return __gcd(a,b);}
 // int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-
 signed main() 
 {
     let_strt;
@@ -30,37 +29,37 @@ signed main()
     {
         int n;
         cin >> n;
-        vector<int> v(n+1);
-        for(int i = 1; i <= n; i++)   
+        vector<int>v(n + 1);
+        for(int i = 1; i <= n; i++)
         {
             cin >> v[i];
         }
-        vector<int> ans(n+1, 0);
-        for(int i = 2; i < n; i++) 
+        vector<pair<int,int>>indx, value;
+        for(int i = 1; i <= n; i++)
         {
-            ans[i] = (v[i+1] - 2*v[i] + v[i-1]) / 2;
-            //cout << ans[i] << sp;
+            int temp = i;
+            while(temp % 2 == 0)
+            {
+                temp /= 2;
+            }
+            indx.pb({temp, i});
+            value.pb({temp, v[i]});
         }
-        int temp = 0;
-        for(int i = 2; i < n; i++)
+        sort(all(indx));
+        sort(all(value));
+
+        bool flag = false;
+        for(int i = 0; i < n; i++)
         {
-            temp += ans[i] * (i - 1);
-            //cout << temp << nl;
+            if(indx[i].f != value[i].f || indx[i].s != value[i].s)
+            {
+                flag = true;
+                break;
+            }
         }
-        ans[n] = (v[1] - temp) / (n - 1);
-        //cout << ans[n];
-        int sum = 0;                  
-        for(int i = 2; i < n; i++)
-        {
-            sum += ans[i];
-        }
-        ans[1] = v[2] - v[1] + sum + ans[n];
-        //cout << ans[1];
-        for(int i = 1; i <= n; i++)  
-        {
-            cout << ans[i] << sp;
-        }
-        cout << nl;
+        cout << (!flag? "YES": "NO") << nl;
+
+
     }
     return 0;
 }
