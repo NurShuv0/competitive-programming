@@ -17,50 +17,33 @@
 #define mod 1000000007
 #define best LLONG_MAX
 #define wrst LLONG_MIN
+// int gcd (int a,int b) {return __gcd(a,b);}
+// int lcm (int a,int b ) {return a * (b/gcd(a,b));}
 using namespace std;
-
 signed main() 
 {
     let_strt;
-
-    int n;
-    cin >> n;
-
-    while(n--)
+    int t;
+    cin >> t;
+    while(t--)
     {
-        int number;
-        cin >> number;
-        vector<int> v;
-
-        for(int i = 2; i * i <= number; i++)
+        int n;
+        cin >> n;
+        vector<int>v(n);
+        int cnt = 0;
+        for(int i = 0; i < n; i++)
         {
-            if(number % i != 0)
-            {
-                cn;
-            }
-
-            int cnt = 0;
-            while(number % i == 0)
+            cin >> v[i];   
+        }
+        int mx = *max_element(all(v));
+        for(int i = 0; i < n; i++)
+        {
+            if(v[i] == mx)
             {
                 cnt++;
-                number /= i;
             }
-            v.pb(cnt);
         }
-
-        if(number > 1)
-        {
-            v.pb(1);
-        }
-
-        int ans = 1;
-        for(auto &c : v)
-        {
-            ans *= (c + 1);
-        }
-
-        cout << ans << nl;
+        cout << cnt << nl;
     }
-
     return 0;
 }
